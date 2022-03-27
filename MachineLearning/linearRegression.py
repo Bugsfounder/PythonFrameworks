@@ -17,27 +17,33 @@ diabetes = datasets.load_diabetes()
 # print("Data_filename", diabetes.data_filename, sep=": ")
 # print("Target_filename", diabetes.target_filename, sep=": ")
 
-diabetes_X = diabetes.data[:, np.newaxis, 2]
+# features for model
+diabetes_X = diabetes.data
 
+# TrainData and TestData
 diabetes_X_train = diabetes_X[:-30]
 diabetes_X_test = diabetes_X[:30]
-
 diabetes_Y_train = diabetes.target[:-30]
 diabetes_Y_test = diabetes.target[:30]
 
+# Initializing LinearRegression Using linear_model
 model = linear_model.LinearRegression()
 
+# Fitting Data to model
 model.fit(diabetes_X_train, diabetes_Y_train)
 
+# Predicted values
 diabetes_Y_predict = model.predict(diabetes_X_test)
 
+# Getting Mean Squared Error
 squaredError = mean_squared_error(diabetes_Y_test, diabetes_Y_predict)
 
+# Printing values
 print("Mean Squared Error", squaredError, sep=": ")
-print("Weights", model.coef_, sep=": ")
-print("Intersept: ", model.intercept_)
+print("Weights", model.coef_, sep=": ")  # w1, w2, w3 .... wn
+print("Intersept: ", model.intercept_)  # w0 (w not) w!
 
-plt.scatter(diabetes_X_test, diabetes_Y_test)
+# Plot the model
 plt.plot(diabetes_X_test, diabetes_Y_predict)
 
 plt.show()
