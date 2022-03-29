@@ -27,3 +27,5 @@ plt.scatter(data_Y_test, data_Y_test)
 plt.plot(data_X_test, data_y_predict)
 
 plt.show()
+
+print("hello world")
