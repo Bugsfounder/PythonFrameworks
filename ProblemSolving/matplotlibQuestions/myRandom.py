@@ -7,8 +7,8 @@ myChemistry=["11 Chemistry", "12 Chemistry", "10 Chemistry","11 Chemistry", "12 
 
 steps = ["Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics","Physics", "Chemistry", "Mathematics"]
 
-# randNumber = random.choice(steps)
-# print(randNumber)
+randNumber = random.choice(steps)
+print(randNumber)
 
 
 
@@ -16,7 +16,7 @@ diceSelect = [1,2,3,4,5,6]
 
 choose = random.choice(diceSelect)
 
-# print(choose)
+print(choose)
 
 print(random.randint(1,100))
 
